@@ -19,14 +19,10 @@ const ListItemWrapper = styled.div`
         transform: scale(1.05);
         box-shadow: 4px 2px 9px 2px #e2ef63;
     }
-    `;
+`;
 
 export const ListItem: FunctionComponent<IListItemProps> = props => {
     const {children} = props;
 
-    return (
-        <ListItemWrapper>
-            {children}
-        </ListItemWrapper>
-    );
+    return <ListItemWrapper>{children}</ListItemWrapper>;
 };

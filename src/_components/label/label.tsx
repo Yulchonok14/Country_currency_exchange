@@ -13,10 +13,5 @@ export const CommonLabel = styled.label`
 `;
 
 export const Label: FunctionComponent<ILabelProps> = props => {
-
-    return (
-        <CommonLabel
-            {...props}
-        ></CommonLabel>
-    );
+    return <CommonLabel {...props}></CommonLabel>;
 };

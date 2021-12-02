@@ -1,2 +1,1 @@
-export interface ICountryInfoPanelProps {
-}
+export interface ICountryInfoPanelProps {}

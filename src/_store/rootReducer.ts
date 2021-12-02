@@ -7,27 +7,31 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import {persistReducer, persistStore} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import {ICountryInfoStateSegment} from '../searchCountryInfo/searchCountryInfo.interface';
 import thunk from 'redux-thunk';
-import { currencyExchangeReducer } from '../currencyExchange/currencyExchange.reducer';
+import {currencyExchangeReducer} from '../currencyExchange/currencyExchange.reducer';
 
 const rootReducer = combineReducers<IStateSegment>({
     country: countryInfoReducer,
-    currency: currencyExchangeReducer
+    currency: currencyExchangeReducer,
 });
 
 const persistConfig = {
     key: 'root',
     storage,
     stateReconciler: autoMergeLevel2,
-  };
+};
 
-const persistedReducer = persistReducer<CombinedState<IStateSegment>>(persistConfig, rootReducer);
+const persistedReducer = persistReducer<CombinedState<IStateSegment>>(
+    persistConfig,
+    rootReducer
+);
 
 export const store = createStore(
-  persistedReducer,
-  initialState,
-  composeWithDevTools(applyMiddleware(thunk)),
+    persistedReducer,
+    initialState,
+    composeWithDevTools(applyMiddleware(thunk))
 );
+
+export type AppDispatch = typeof store.dispatch;
 
 export const persistor = persistStore(store);

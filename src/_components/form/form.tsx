@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import {CommonLabel} from '../label/label';
 
 const CommonForm = styled.form`
-  position: relative;
-  width: 70%;
-  border-radius: 8px;
-  padding: 16px;
-  text-align: center;
-  box-shadow: 0 4px 8px grey;
+    position: relative;
+    width: 70%;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 8px grey;
 `;
 
 const FormNameLabel = styled(CommonLabel)`
@@ -21,14 +21,12 @@ const FormNameLabel = styled(CommonLabel)`
 `;
 
 export const Form: FunctionComponent<IFormExtendProps> = props => {
-  const {formName, children, ...rest} = props;
+    const {formName, children, ...rest} = props;
 
     return (
-        <CommonForm
-            {...rest as IFormProps}
-        >
-          {formName ? <FormNameLabel>{formName}</FormNameLabel> : null}
-          {children}
+        <CommonForm {...(rest as IFormProps)}>
+            {formName ? <FormNameLabel>{formName}</FormNameLabel> : null}
+            {children}
         </CommonForm>
     );
 };

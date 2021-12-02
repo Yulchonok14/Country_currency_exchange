@@ -7,29 +7,52 @@ import {Label} from '../_components/label/label';
 import {searchCountryInfoSelector} from '../searchCountryInfo/searchCountryInfo.selector';
 import {Loader} from '../_components/loader/loader';
 import styled from 'styled-components';
+import React from 'react';
 
 const CountryInfo = styled.div`
-  position: relative; 
-  height: 410px;
+    position: relative;
+    height: 410px;
 `;
 
-export const CountryInfoPanelComponent: FunctionComponent<ICountryInfoPanelProps> = () => {
-  const {name, capital, population, currency, loading} = useSelector(searchCountryInfoSelector);
+export const CountryInfoPanelComponent: FunctionComponent<
+ICountryInfoPanelProps
+> = () => {
+    const {name, capital, population, currency, loading} = useSelector(
+        searchCountryInfoSelector
+    );
 
-  return (
-    <CountryInfo>
-      <List>
-        {loading ? <Loader/> : 
-        <>
-          <ListItem><Label style={{width: '200px'}}>COUNTRY NAME:</Label>{name}</ListItem>
-          <ListItem><Label style={{width: '200px'}}>CAPITAL:</Label>{capital}</ListItem>
-          <ListItem><Label style={{width: '200px'}}>POPULATION:</Label>{population}</ListItem>
-          <ListItem><Label style={{width: '200px'}}>CURRENCY:</Label>{currency}</ListItem>
-        </>
-        }
-      </List>
-      </CountryInfo>
-  );
-}
+    return (
+        <CountryInfo>
+            <List>
+                {loading
+                    ? (
+                        <Loader />
+                    )
+                    : (
+                        <>
+                            <ListItem>
+                                <Label style={{width: '200px'}}>
+                                COUNTRY NAME:
+                                </Label>
+                                {name}
+                            </ListItem>
+                            <ListItem>
+                                <Label style={{width: '200px'}}>CAPITAL:</Label>
+                                {capital}
+                            </ListItem>
+                            <ListItem>
+                                <Label style={{width: '200px'}}>POPULATION:</Label>
+                                {population}
+                            </ListItem>
+                            <ListItem>
+                                <Label style={{width: '200px'}}>CURRENCY:</Label>
+                                {currency}
+                            </ListItem>
+                        </>
+                    )}
+            </List>
+        </CountryInfo>
+    );
+};
 
 export const CountryInfoPanel = memo(CountryInfoPanelComponent);

@@ -7,11 +7,11 @@ export const initialState: Partial<IStateSegment> = {
         population: 67215293,
         currency: 'GBP',
         loading: false,
-        error: false
+        error: false,
     },
     currency: {
         baseAsset: 'SEK',
         quoteAsset: 'GBP',
-        rates: 0.082812
-    }
+        rates: 0.082812,
+    },
 };

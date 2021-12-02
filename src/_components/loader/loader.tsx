@@ -1,5 +1,6 @@
 import React, {FunctionComponent} from 'react';
 import styled from 'styled-components';
+import {ILoaderProps} from './loader.interface';
 
 const CommonLoader = styled.div`
     margin: auto;
@@ -8,13 +9,12 @@ const CommonLoader = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 100px;
-    `;
+`;
 
-export const Loader: FunctionComponent<{}> = _ => {
-
-  return (
-    <CommonLoader>
-      <i className="fa fa-cog fa-spin" />
-    </CommonLoader>
-  );
-}
+export const Loader: FunctionComponent<ILoaderProps> = () => {
+    return (
+        <CommonLoader>
+            <i className="fa fa-cog fa-spin" />
+        </CommonLoader>
+    );
+};

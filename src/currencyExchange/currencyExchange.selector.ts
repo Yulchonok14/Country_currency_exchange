@@ -1,5 +1,7 @@
 import {ICurrencyExchangeStateSegment} from './currencyExchange.interface';
 
-export const currencyExchangeSelector = (state: ICurrencyExchangeStateSegment) => {
+export const currencyExchangeSelector = (
+    state: ICurrencyExchangeStateSegment
+) => {
     return state.currency;
 };

@@ -20,11 +20,8 @@ const CommonButton = styled.button`
 `;
 
 export const Button: FunctionComponent<IButtonProps> = props => {
-
     return (
-        <CommonButton
-            type={'button'}
-            {...props}
-        ></CommonButton>
+        <CommonButton type={'button'}
+            {...props}></CommonButton>
     );
 };

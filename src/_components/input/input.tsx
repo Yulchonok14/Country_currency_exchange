@@ -17,17 +17,14 @@ const CommonInput = styled.input`
         margin: 0;
     }
 
-    &[type=number] {
+    &[type='number'] {
         -moz-appearance: textfield;
     }
 `;
 
 export const Input: FunctionComponent<IInputProps> = props => {
-
     return (
-        <CommonInput
-            type={'text'}
-            {...props}
-        ></CommonInput>
+        <CommonInput type={'text'}
+            {...props}></CommonInput>
     );
 };
